@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "ConnectionString"
+    },
+    "compute.appService1": {
+      "group": "connections",
+      "type": "compute.appService"
+    },
+    "secrets1": {
+      "type": "secrets"
+    },
+    "mssql2": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:bitredict2db"
+    }
+  }
+}

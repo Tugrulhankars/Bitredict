@@ -1,0 +1,6 @@
+@Bitredict_HostAddress = http://localhost:5122
+
+GET {{Bitredict_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
