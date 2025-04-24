@@ -8,6 +8,4 @@ services:
             - ASPNETCORE_URLS=http://+:80
         ports:
             - 80:80
-        depends_on:
-            postgres:
-                condition: service_healthy
+       
