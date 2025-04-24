@@ -7,6 +7,10 @@
     <InvariantGlobalization>false</InvariantGlobalization>
     <UserSecretsId>63591314-d45f-4a9d-802a-a266fdfeec5f</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+	  <ContainerImageName>products-api</ContainerImageName>
+	  <ContainerImageTags>latest</ContainerImageTags>
+	  <PublishProfile>DefaultContainer</PublishProfile>
+	  <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
   </PropertyGroup>
 
   <ItemGroup>
