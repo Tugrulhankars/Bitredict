@@ -75,6 +75,14 @@ builder.Services.AddQuartz(q =>
 builder.Services.AddQuartzHostedService(q => q.WaitForJobsToComplete = true);
 
 builder.Services.AddDbContext<BaseDbContext>();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin", builder =>
+        builder.WithOrigins("http://localhost:8080") // Frontend'inizin URL'sini buraya yazýn
+            .AllowAnyMethod() // Ýzin verilen HTTP metodlarý (GET, POST, vb.)
+            .AllowAnyHeader() // Ýzin verilen header'lar
+            .AllowCredentials()); // Eðer kimlik doðrulama yapýyorsanýz
+});
 var app = builder.Build();
 app.UseSwagger();
    app.UseSwaggerUI();
@@ -84,7 +92,8 @@ app.UseSwagger();
 //    app.UseSwagger();
 //    app.UseSwaggerUI();
 //}
-
+builder.WebHost.UseUrls("http://0.0.0.0:8080");
+app.UseCors("AllowSpecificOrigin");
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
